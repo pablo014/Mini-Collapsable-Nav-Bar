@@ -1,0 +1,26 @@
+{
+  "name": "mini-collapse-nav-bar",
+  "version": "1.0.0",
+  "description": "A nav bar that opens all the way when on hover and closes partially to show icons",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pablo014/Mini-Collapsable-Nav-Bar.git"
+  },
+  "keywords": [
+    "navigation",
+    "collapsable",
+    "hover",
+    "navbar",
+    "responsive"
+  ],
+  "author": "Angelo Pablo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pablo014/Mini-Collapsable-Nav-Bar/issues"
+  },
+  "homepage": "https://github.com/pablo014/Mini-Collapsable-Nav-Bar#readme"
+}
