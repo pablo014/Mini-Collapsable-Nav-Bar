@@ -1,7 +1,12 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+
+export interface NavLink {
+    name: string,
+    url: string,
+}
 export interface NavBar {
-    navLinks?: Array<string>
+    navLinks?: Array<NavLink>
     minWidth?: string | number,
     maxWidth?: string | number,
 }
@@ -24,11 +29,11 @@ const closeDrawer = () => {
         @mouseenter="openDrawer"
         @mouseleave="closeDrawer"
         :class="isOpen ? `w-${maxWidth}` : `w-${minWidth}`"
-        class="container fixed transition-all ease-in-out duration-600 bg-blue-300 h-screen">
-        <RouterLink v-for="link in navLinks" :to="link">
+        class="container fixed transition-all ease-in-out duration-600 h-screen">
+        <RouterLink v-for="link in navLinks" :to="link.url">
             <slots name="nav-item">
-                <slot :name="`${link}-open`" v-if="isOpen"></slot>
-                <slot :name="`${link}-close`" v-else></slot>
+                <slot :name="`${link.name}-open`" v-if="isOpen"></slot>
+                <slot :name="`${link.name}-close`" v-else></slot>
             </slots>
         </RouterLink>
 </div>

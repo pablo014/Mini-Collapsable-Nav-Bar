@@ -5,7 +5,11 @@ import NavBar from "./components/nav-bar.vue";
 
 <template>
   <div>
-      <NavBar />
+      <NavBar class="bg-blue-300" :navLinks="['test', 'test1']">
+          <template #test-open>
+              test
+          </template>
+      </NavBar>
       <RouterView></RouterView>
   </div>
 </template>
