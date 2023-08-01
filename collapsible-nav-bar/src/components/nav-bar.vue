@@ -24,11 +24,18 @@ const closeDrawer = () => {
         @mouseenter="openDrawer"
         @mouseleave="closeDrawer"
         :class="isOpen ? `w-${maxWidth}` : `w-${minWidth}`"
-        class="transition-all ease-in-out duration-600 bg-blue-300 h-screen">
-
+        class="container fixed transition-all ease-in-out duration-600 bg-blue-300 h-screen">
+        <RouterLink v-for="link in navLinks" :to="link">
+            <slots name="nav-item">
+                <slot :name="`${link}-open`" v-if="isOpen"></slot>
+                <slot :name="`${link}-close`" v-else></slot>
+            </slots>
+        </RouterLink>
 </div>
 </template>
 
 <style scoped>
-
+.container {
+    z-index: 1000;
+}
 </style>
