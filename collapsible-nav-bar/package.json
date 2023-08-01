@@ -1,11 +1,22 @@
 {
   "name": "collapsible-nav-bar",
-  "private": true,
-  "version": "0.0.0",
+  "private": false,
+  "version": "0.0.1",
   "type": "module",
+  "files": ["dist"],
+  "main": "./dist/nav-bar.umd.cjs",
+  "module": "./dist/nav-bar.js",
+  "types": "./dist/main.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/nav-bar.js",
+      "require": "./dist/nav-bar.umd.js"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc && vite build",
+    "build": "vite build && vue-tsc --emitDeclarationOnly",
     "preview": "vite preview"
   },
   "dependencies": {

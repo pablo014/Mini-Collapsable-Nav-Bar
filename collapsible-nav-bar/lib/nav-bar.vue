@@ -6,12 +6,12 @@ export interface NavLink {
     url: string,
 }
 export interface NavBar {
-    navLinks?: Array<NavLink>
+    navLinks: Array<NavLink>
     minWidth?: string | number,
     maxWidth?: string | number,
 }
 const props = withDefaults(defineProps<NavBar>(), {
-    navLinks: [],
+    navLinks: () => [],
     maxWidth: '64',
     minWidth: '20'
 })
